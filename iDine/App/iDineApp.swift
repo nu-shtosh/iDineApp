@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct iDineApp: App {
+
+    var order = Order()
+
+    var favorite = Favorite()
+
+    let contentView = AppView()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            contentView.environmentObject(order).environmentObject(favorite)
         }
     }
 }
